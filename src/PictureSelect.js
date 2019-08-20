@@ -16,6 +16,8 @@ export default class PictureSelect extends React.Component {
         if(!checkbox.checked){
             this.setState({
                 arr:[]
+            },()=>{
+                this.props.onChange(arr);
             })
         }
         else{
@@ -24,9 +26,10 @@ export default class PictureSelect extends React.Component {
             })
             this.setState({
                 arr:arrCheck
+            },()=>{
+                this.props.onChange(arr);
             })
         }
-        this.props.onChange(arr);
     }
     hadleCheck = (e,value) =>{
         const { arr } = this.state;

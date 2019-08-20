@@ -27,6 +27,8 @@ export default class App extends React.Component{
   updateState = (endValue) => {
     this.setState({
       values: endValue
+    },()=>{
+      console.log(this.state.values);
     })
   }
   render(){
